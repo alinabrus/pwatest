@@ -1,0 +1,49 @@
+<nav id="topbar" role="navigation" class="navbar navbar-default pln prn">
+	<div class="container">
+		<div class="navbar-header">
+			
+          
+			<div class="row">
+				<!--<div class="col-xs-12 col-md-7">
+					<div class="contact-info">Call Us Today! <span>1.844.428.0099 <font class="header-separator">|</font><a href="mailto:info@maxletics.com">info@maxletics.com</a></span></div>
+				</div>-->
+				<div class="col-xs-12 col-md-12 loginLinkBox">
+					<a ng-if="!session.user" ui-sref="login">Login</a>
+					<!-- 
+					<div><button ng-if="!session.user" type="button" class="btn btn-yelb " ui-sref="reg.account({tag:'org'})">Sign Up!</button></div>
+					 -->
+					<span ng-if="session.user" class="fsz17 lh44">Hi,&nbsp</span>
+					<a ng-if="session.user" class="profile_link" ui-sref="profile">{{session.user.userName}}</a>				
+					<!--<a ng-if="session.user" href="" ng-click="logout()"><img ng-src="assets/images/logout.png" alt="" /></a>-->
+					<a ng-if="session.user" ng-click="logout()" href="">SIGN OUT</a>
+				</div>
+			</div>
+		</div>
+		
+  </div>
+</nav>
+<div class="header-wrapper no-mobile">
+	<div class="logo-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-12 text-center">
+					<a href="http://www.maxletics.com"><img ng-src="assets/images/xxx.png" alt="" /></a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" ng-click="scrollTo('hormenu')">
+						<span class="sr-only">Toggle navigation</span>
+						<i class="fa fa-bars"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="horizontal-menu" class="collapse navbar-collapse container text-center">
+		<ul class="nav navbar-nav menu_box">
+			<li><a ui-sref="home({})"><span class="menu-text">Home</span></a></li>
+			<li><a ui-sref="wiki.step1({})"><span class="menu-text">Wiki</span></a></li>
+			<li><a ui-sref="search({})"><span class="menu-text">Search</span></a></li>
+			<li><a ui-sref="marketplace({})"><span class="menu-text">Marketplace</span></a></li>
+		</ul>
+	</div>
+	<a id="hormenu"></a>
+	
+</div>

@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RewriteRule ^sitemap\.xml$ /backend/sitemap/sitemap_create [R,L]
+
+RewriteRule ^api/(.*)$ /backend/$1 [NC,L]

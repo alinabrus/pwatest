@@ -1,0 +1,44 @@
+<div class="page-signin">
+  <div class="col-xs-12 col-md-5 col-md-offset-3" ng-controller="LoginCtrl" ng-init="isset(state.params.code) ? confirmRegistration() : {}">
+  
+  	<div class="row">
+			<div class="col-md-12  mb40 mt50">
+				<dl class="dl-horizontal" ng-show="confirmRegistrationResult===true">
+					<div role="alert" class="alert alert-success alert-dismissible alert-custom" ng-show="confirmRegistrationResult===true">
+						<h3>Thank you, {{confirmationUserName}}! Registration has been successfully confirmed.</h3>
+					</div>
+				</dl>
+				<dl class="dl-horizontal" ng-show="confirmRegistrationResult===false">
+					<div role="alert" class="alert alert-danger alert-dismissible alert-custom" ng-show="confirmRegistrationResult===false">
+						<h3>{{confirmRegistrationError}}</h3>
+					</div>
+				</dl>
+	</div>
+			
+    <form class="form-horizontal" name="loginForm" novalidate>
+      <div class="header-content">
+        <h1>Login to your account</h1>
+      </div>
+      <div class="body-content">
+		<div role="alert" class="error_login" ng-show="authResult===false">You have entered wrong email or password.</div>
+        
+        <div class="form-group" show-errors>
+			<label class="label" for="logininp">Login</label>
+			<input id="logininp" class="form-control" type="email" ng-model="user.username" name="user_username" placeholder="Enter your email" required >
+			<div class="error_txt" ng-if="loginForm.user_username.$error.required">This field is required</div>
+			<div class="error_txt" ng-if="loginForm.user_username.$dirty && loginForm.user_username.$error.email">This field should contain a valid email.</div>
+		</div>
+		<div class="form-group" show-errors>
+			<label class="label" for="passwordinp">Password</label>
+			<input id="passwordinp" class="form-control" type="password" ng-model="user.password" name="user_password" placeholder="Enter your password" required>
+			<div class="error_txt">This field is required</div>
+		</div>
+		<button type="submit" class="btn btn-yelb col-md-5 col-xs-12" ng-click="login(user)">Log in</button>
+        <a class="link pull-right lh32" ng-click="state.go('forgot_password')" href="">Forgot password?</a>
+        <div class="clearfix"></div>
+		
+      </div>
+    </form>
+        
+  </div>  
+</div>

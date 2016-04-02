@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="esWrapper" ng-controller="EsAppCtrl" >
+  <head>
+    <title ng-bind="page.title || appTitle"></title>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
+    <meta http-equiv="Cache-Control" content="private, no-cache, max-age=0, proxy-revalidate">
+    <!-- <meta http-equiv="Cache-Control" content="no-store, must-revalidate"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        
+	<link rel="shortcut icon" href="assets/images/favicon.jpg" type="image/jpeg"/>
+    <link rel="apple-touch-icon" href="images/icons/favicon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png"/>
+	<link rel='stylesheet' id='avada-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Muli%3A400%2C400italic%2C700%2C700italic&#038;subset=latin&#038;ver=4.3.1' type='text/css' media='all' />
+    
+    <!-- Loading css-->
+    
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700"/>
+    <link type="text/css" rel="stylesheet" href="assets/global/vendors/font-awesome/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/global/vendors/simple-line-icons/simple-line-icons.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/global/vendors/bootstrap/css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" href="assets/global/vendors/bootstrap/css/bootstrap-select.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/global/vendors/animate.css/animate.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/vendors/bootstrap-switch/css/bootstrap-switch.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/vendors/google-code-prettify/prettify.css"/>
+    
+    <link type="text/css" rel="stylesheet" href="assets/vendors/bootstrap-fileinput/css/fileinput.css"/>
+    
+    <link type="text/css" rel="stylesheet" href="" id="font-layout"/>
+    <link type="text/css" rel="stylesheet" href="assets/global/css/core.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/system.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/system-responsive.css"/>
+    
+    <link type="text/css" rel="stylesheet" href="assets/css/ui-grid.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/colorpicker.css"/>
+    
+	<link type="text/css" rel="stylesheet" href="assets/css/espade.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/modalbox.css"/>
+    
+	
+    <!-- Loading Angular libs-->
+    
+    <script src="assets/global/js/jquery-1.10.2.min.js"></script>
+    <script src="js/libs/angular-1.3.13.js"></script>
+    <script src="js/libs/angular-route.js"></script>
+    <script src="js/libs/angular-ui-router.js"></script>
+    <script src="js/libs/angular-cookies.min.js"></script>
+    
+    <!-- <script src="js/libs/ui-utils.js"></script> -->
+    <script src="js/libs/mask.min.js"></script>
+    <script src="js/libs/validate.min.js"></script>
+    
+    <script src="js/libs/angular-sanitize.js"></script>
+    <script src="js/libs/ocLazyLoad.js"></script>
+    <script src="js/libs/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <script src="js/libs/showErrors.js"></script>
+    <script src="js/libs/angular-social-links.js"></script>
+    <script src="js/libs/angular-noty.dist.ab.js"></script>
+    <script src="js/libs/ng-infinite-scroll.min.js"></script>
+    
+    <script src="js/libs/ui-grid.js"></script>
+    <script src="js/libs/csv.js"></script>
+    <script src="js/libs/pdfmake.js"></script>
+    <script src="js/libs/vfs_fonts.js"></script>
+    
+    <script src="js/libs/ng-google-chart.js"></script>
+    <script src="js/libs/satellizer.min.js"></script>
+    
+    <!-- Loading jQuery libs-->
+    
+    <script src="assets/global/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/global/js/jquery-ui.js"></script>
+    <script src="assets/global/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 
+    <script src="assets/global/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+	 -->
+	<script src="assets/global/vendors/bootstrap/js/bootstrap-select.min.js"></script>
+    <script src="assets/global/js/html5shiv.js"></script>
+    <script src="assets/global/js/respond.min.js"></script>
+    <script src="assets/global/vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="assets/global/vendors/slimScroll/jquery.slimscroll.js"></script>
+    
+    
+    <script src="assets/vendors/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <script src="assets/vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="assets/vendors/bootstrap-datepaginator/moment.js"></script>
+    <script src="js/libs/moment-with-locales.js"></script>
+	
+    <script src="assets/vendors/bootstrap-fileinput/js/fileinput_ab.js"></script>
+    <script src="js/libs/jquery.inputmask.bundle.min.js"></script><!--  -->
+    <script src="js/libs/jquery.price_format.2.0.ab.js"></script>
+    <script src="js/libs/load-image.all.min.js"></script>
+    <script src="js/libs/bootstrap-colorpicker-module.min.js"></script>
+    
+    
+    <!-- Loading core javascript-->
+    
+    <script src="js/libs/canvas-to-blob.js"></script>
+    <script src="js/esApp.js"></script>
+    <script src="js/esAppRouting.js"></script>
+    
+    <script src="js/controllers/EsAppCtrl.js"></script>
+    <script src="js/controllers/LoginCtrl.js"></script>
+     
+    <script src="js/services/AuthService.js"></script>
+    <script src="js/services/SessionService.js"></script>
+    <script src="js/services/LocationService.js"></script>
+    <script src="js/services/FileInputService.js"></script>
+    <script src="js/services/FileUploadService.js"></script>
+    <script src="js/services/GuidGenerator.js"></script>
+    
+    <script src="js/directives/esMoneyMask.js"></script> 
+	<script src="js/directives/esPopover.js"></script> 
+	<script src="js/directives/esValidator.js"></script>
+	
+	<script src="js/filters/normalizeString.js"></script>
+	
+	
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="https://apis.google.com/js/client.js"></script>
+    <script src="//js.live.net/v5.0/wl.js"></script>
+    
+    <script language="javascript">
+    	if ('serviceWorker' in navigator) {
+    	  navigator.serviceWorker.register('/serviceWorker.js').then(function(registration) {
+    	    console.log('ServiceWorker registration successful with scope: ',    registration.scope);
+    	  }).catch(function(err) {
+    	    console.log('ServiceWorker registration failed: ', err);
+    	  });
+    	}
+    </script>
+    
+</head>
+  <body id="body" bng-controller="AppController" ng-class="[header.layout_menu]">
+    
+    <!--  --------------------------------------------------------------------------------------------------  -->
+    
+    <div ng-if="state.current.name && !standalone" ng-class="header.boxed" class="fluid">
+
+	  <div class="allwindow">
+      <!--BEGIN TOPBAR-->
+      <div ng-include="'tpl/states/includes/topbar.html'" class="page-header-topbar"></div>
+      <!--END TOPBAR-->
+            
+      <div class="bg_pic" ng-class="bgClass">
+	  <div class="bg_main_top">
+      <div class="container">
+	  <div id="wrapper">
+        <!--BEGIN PAGE WRAPPER-->
+        <div id="page-wrapper">
+		
+          <!--BEGIN PAGE CONTENT-->
+          <div ng-class="[header.animation]" gng-generaltab="" class="page-content animated">
+
+            <div class="box-content">
+              <div ui-view="" class="content"></div>
+            </div>
+            
+          </div>
+          <!--END PAGE CONTENT-->
+        </div>
+        <!--END PAGE WRAPPER-->
+      </div></div></div></div>
+      
+      	<!--BEGIN FOOTER-->
+      	<div id="footer">
+			<div class="footer-widget-area">
+				
+			</div>
+		
+		</div>
+      </div>
+	  
+      <!--END FOOTER-->
+    </div>
+	</div>
+    
+    <!--  --------------------------------------------------------------------------------------------------  -->
+ 
+    <div ng-if="standalone" ng-class="header.boxed" class="fluid org_public_prof" ui-view="" ></div>
+    
+    <!--  --------------------------------------------------------------------------------------------------  -->
+    
+	
+  </body>
+  
+</html>

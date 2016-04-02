@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteCond %{SERVER_PROTOCOL} http [NC]
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule (^.*$) http://%1%{REQUEST_URI} [R=302,L]
+
+#default codeigniter rerouting:
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond $1 !^(index\.php|lib|css|js)
+RewriteRule ^(.+)$ index.php?/$1 [L]
