@@ -62,22 +62,23 @@ function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS
 		  });
 		};
 		
-		
-		if ('bluetooth' in navigator) {
-			$interval(function(){
-				$scope.log += '</br> + ';
-				$scope.bleConnectorTest($scope.filterService);
-			}, 200);
-			//$scope.bleConnectorTest($scope.filterService);
-	    }
-		else {
-			$log.error('Web Bluetooth is not enabled! Check chrome://flags/#enable-web-bluetooth');
-			$scope.log += ' Web Bluetooth is not enabled! Check chrome://flags/#enable-web-bluetooth';
-			//$scope.log = $sce.trustAsHtml('</br> Web Bluetooth is not enabled! Check <a href="chrome://flags/#enable-web-bluetooth">here</a>');
-			$interval(function(){
-				$scope.log += '</br> - ';
-			}, 200);
-		}
-		
+		$scope.bleConnectorTestActivate = function() 
+		{
+			if ('bluetooth' in navigator) {
+				$interval(function(){
+					$scope.log += '</br> + ';
+					$scope.bleConnectorTest($scope.filterService);
+				}, 200);
+				//$scope.bleConnectorTest($scope.filterService);
+		    }
+			else {
+				$log.error('Web Bluetooth is not enabled! Check chrome://flags/#enable-web-bluetooth');
+				$scope.log += ' Web Bluetooth is not enabled! Check chrome://flags/#enable-web-bluetooth';
+				//$scope.log = $sce.trustAsHtml('</br> Web Bluetooth is not enabled! Check <a href="chrome://flags/#enable-web-bluetooth">here</a>');
+				$interval(function(){
+					$scope.log += '</br> - ';
+				}, 1000);
+			}
+		};
 				
 }]);
