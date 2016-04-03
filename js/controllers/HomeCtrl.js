@@ -1,9 +1,9 @@
 App
 .controller('HomeCtrl', 
-['$scope', '$window', '$log', '$state', '$rootScope', '$parse', 'SETTINGS', 'SessionService',
-function ($scope, $window, $log, $state, $rootScope, $parse, SETTINGS, SessionService) {
+['$scope', '$window', '$log', '$state', '$rootScope', '$parse', '$interval', 'SETTINGS', 'SessionService',
+function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS, SessionService) {
 	
-	$scope.filterService = '0x180A';
+	$scope.filterService = ''; //'0x180A';
 	$scope.log = '';
 	
 	$scope.bleConnectorTest = function (filterService) {
@@ -54,7 +54,10 @@ function ($scope, $window, $log, $state, $rootScope, $parse, SETTINGS, SessionSe
 		
 		
 		if ('bluetooth' in navigator) {
-			$scope.bleConnectorTest($scope.filterService);
+			$interval(function(){
+				$scope.bleConnectorTest($scope.filterService);
+			}, 200);
+			//$scope.bleConnectorTest($scope.filterService);
 	    }
 		else {
 			$log.error('Web Bluetooth is not enabled! Check chrome://flags/#enable-web-bluetooth');
