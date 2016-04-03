@@ -3,7 +3,7 @@ App
 ['$scope', '$window', '$log', '$state', '$rootScope', '$parse', '$interval', 'SETTINGS', 'SessionService',
 function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS, SessionService) {
 	
-	$scope.filterService = ''; //'0x180A';
+	$scope.filterService = '0x1819'; //location and navigation
 	$scope.log = '';
 	
 	$scope.bleConnectorTest = function (filterService) {
@@ -17,7 +17,17 @@ function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS
 		  if (filterService) {
 		    options.filters.push({services: [filterService]});
 		  }
-		  
+		  /*
+		  let filterName = '';//document.getElementById('name').value;
+		  if (filterName) {
+		    options.filters.push({name: filterName});
+		  }
+
+		  let filterNamePrefix = document.getElementById('namePrefix').value;
+		  if (filterNamePrefix) {
+		    options.filters.push({namePrefix: filterNamePrefix});
+		  }
+		  */
 		  $log.debug('Requesting Bluetooth Device...');
 		  navigator.bluetooth.requestDevice(options)
 		  .then(device => {
