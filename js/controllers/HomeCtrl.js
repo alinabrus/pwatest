@@ -78,7 +78,7 @@ function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS
 					$interval(function(){
 						$scope.log += '</br> + ';
 						$scope.bleConnectorTest($scope.filterService);
-					}, 200);
+					}, 1000);
 					//$scope.bleConnectorTest($scope.filterService);
 			    }
 				else {
