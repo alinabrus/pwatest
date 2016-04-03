@@ -4,6 +4,7 @@ App
 function ($scope, $window, $log, $state, $rootScope, $parse, SETTINGS, SessionService) {
 	
 	$scope.filterService = '0x180A';
+	$scope.log = '';
 	
 	$scope.bleConnectorTest = function (filterService) {
 		  
@@ -28,13 +29,26 @@ function ($scope, $window, $log, $state, $rootScope, $parse, SETTINGS, SessionSe
 			  $log.debug('> Product Id:       ' + device.productID);
 			  $log.debug('> Product Version:  ' + device.productVersion);
 			  $log.debug('> UUIDs:            ' + device.uuids.join('\n' + ' '.repeat(20)));
+			  
+			  $scope.log += '</br> > Name:             ' + device.name;
+			  $scope.log += '</br> > Id:               ' + device.id;
+		  	  $scope.log += '</br> > Device Class:     ' + device.deviceClass;
+			  $scope.log += '</br> > Vendor Id Source: ' + device.vendorIDSource;
+			  $scope.log += '</br> > Vendor Id:        ' + device.vendorID;
+			  $scope.log += '</br> > Product Id:       ' + device.productID;
+			  $scope.log += '</br> > Product Version:  ' + device.productVersion;
+			  $scope.log += '</br> > UUIDs:            ' + device.uuids.join('\n' + ' '.repeat(20));
 		    if (device.adData) {
 		    	$log.debug('> Tx Power:         ' + device.adData.txPower + ' dBm');
 		    	$log.debug('> RSSI:             ' + device.adData.rssi + ' dBm');
+		    	
+		    	$scope.log += '</br> > Tx Power:         ' + device.adData.txPower + ' dBm';
+				$scope.log += '</br> > RSSI:             ' + device.adData.rssi + ' dBm';
 		    }
 		  })
 		  .catch(error => {
 			  $log.debug('Argh! ' + error);
+			  $scope.log += '</br> Argh! ' + error;
 		  });
 		};
 		
@@ -44,6 +58,8 @@ function ($scope, $window, $log, $state, $rootScope, $parse, SETTINGS, SessionSe
 	    }
 		else {
 			$log.error('Web Bluetooth is not enabled! Check chrome://flags/#enable-web-bluetooth');
+			$scope.log += ' Web Bluetooth is not enabled! Check chrome://flags/#enable-web-bluetooth';
+			//$scope.log = $sce.trustAsHtml('</br> Web Bluetooth is not enabled! Check <a href="chrome://flags/#enable-web-bluetooth">here</a>');
 		}
 		
 				
