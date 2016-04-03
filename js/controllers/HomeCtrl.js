@@ -3,7 +3,7 @@ App
 ['$scope', '$window', '$log', '$state', '$rootScope', '$parse', '$interval', 'SETTINGS', 'SessionService',
 function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS, SessionService) {
 	
-	$scope.filterService = '0x1819'; //location and navigation
+	$scope.filterService = 'fda50693-a4e2-4fb1-afcf-c6eb07647825'; //'0x1819'; //location and navigation
 	$scope.log = '';
 	
 	$scope.bleConnectorTest = function (filterService) {
