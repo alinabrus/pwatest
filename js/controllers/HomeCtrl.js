@@ -56,6 +56,7 @@ function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS
 		    	$scope.log += '</br> > Tx Power:         ' + device.adData.txPower + ' dBm';
 				$scope.log += '</br> > RSSI:             ' + device.adData.rssi + ' dBm';
 		    }
+		    return device.connectGATT();
 		  })
 		  .catch(error => {
 			  $log.debug('Argh! ' + error);
