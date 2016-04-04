@@ -3,7 +3,7 @@
       document.addEventListener('WebComponentsReady', function() {
     	  
         let testButton = document.querySelector('#testBtn');
-        let log = '';
+        var log = '';
         
         testButton.addEventListener('click', function () {
             if ('bluetooth' in navigator) {
@@ -31,7 +31,7 @@
                 return device.connectGATT();
               })
               .catch(error => {
-				  log += '</br> Argh! ' + error;
+				  log += 'Argh! ' + error;
 				  alert(log);
 			  });
             } else {
