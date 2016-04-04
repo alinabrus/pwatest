@@ -1,3 +1,45 @@
+<script>
+      'use strict';
+      document.addEventListener('WebComponentsReady', function() {
+    	  
+        let testButton = document.querySelector('#testBtn');
+        let log = '';
+        
+        testButton.addEventListener('click', function () {
+            if ('bluetooth' in navigator) {
+              navigator.bluetooth.requestDevice({
+                filters: [{
+                  services: [parseInt('0x10002', 16), parseInt('0x8479', 16),'fda50693-a4e2-4fb1-afcf-c6eb07647825']
+                }]
+              })
+              .then(device => {
+            	  log += ' > Name:             ' + device.name;
+    			  log += ' > Id:               ' + device.id;
+    		  	  log += ' > Device Class:     ' + device.deviceClass;
+    			  log += ' > Vendor Id Source: ' + device.vendorIDSource;
+    			  log += ' > Vendor Id:        ' + device.vendorID;
+    			  log += ' > Product Id:       ' + device.productID;
+    			  log += ' > Product Version:  ' + device.productVersion;
+    			  log += ' > UUIDs:            ' + device.uuids.join('\n' + ' '.repeat(20));
+    			  
+    			  if (device.adData) {
+   			    	log += ' > Tx Power:         ' + device.adData.txPower + ' dBm';
+   					log += ' > RSSI:             ' + device.adData.rssi + ' dBm';
+   			      }
+    			  alert(log);
+                console.log('Connecting to GATT Server...');
+                return device.connectGATT();
+              })
+              .catch(error => {
+				  log += '</br> Argh! ' + error;
+				  alert(log);
+			  });
+            } else {
+            	alert('Web Bluetooth is not enabled! Check chrome://flags/#enable-web-bluetooth');
+            }
+          });
+        });
+</script>
 
 <div class="row">
   <div class="col-lg-12">
@@ -9,7 +51,7 @@
 		<div class="panel-body">
 		  	<div>[{{state.current.templateUrl}}]</div>
 		  	</br></br>
-		  	<a id="testBtn" href="" ung-click="bleConnectorTestActivate()">test 1</a>
+		  	<a id="testBtn" href="" ung-click="bleConnectorTestActivate()">test 2</a>
 		  	<div ng-bind-html="log"></div>
 		</div>
 	</div>

@@ -67,12 +67,8 @@ function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS
 		$scope.bleConnectorTestActivate = function() 
 		{
 			//var el = angular.element(event.target);
-			//var el = angular.element('#testBtn');
-			//el.on('click', 
-					
-			let testButton = document.querySelector('#testBtn');
-			testButton.addEventListener('click',
-					
+			var el = angular.element('#testBtn');
+			el.on('click', 
 			function(event) {
 			    event.stopPropagation();
 			    event.preventDefault();
@@ -99,6 +95,6 @@ function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS
 			});
 			
 		};
-		$scope.bleConnectorTestActivate();
+		//$scope.bleConnectorTestActivate();
 				
 }]);
