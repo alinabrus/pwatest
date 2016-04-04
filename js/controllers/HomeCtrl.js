@@ -15,7 +15,8 @@ function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS
 		    filterService = parseInt(filterService, 16);
 		  }
 		  if (filterService) {
-		    options.filters.push({services: [filterService]});
+		    //options.filters.push({services: [filterService]});
+		    options.filters.push({services: ['10002','8479','fda50693-a4e2-4fb1-afcf-c6eb07647825']});
 		  }
 		  /*
 		  let filterName = '';//document.getElementById('name').value;
