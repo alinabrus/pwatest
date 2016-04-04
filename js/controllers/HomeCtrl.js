@@ -82,10 +82,10 @@ function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS
 			    }
 			    */
 			    if ('bluetooth' in navigator) {
-					$interval(function(){
+					//$interval(function(){
 						$scope.log += '</br> + ';
 						$scope.bleConnectorTest($scope.filterService);
-					}, 1000);
+					//}, 1000);
 					//$scope.bleConnectorTest($scope.filterService);
 			    }
 				else {
