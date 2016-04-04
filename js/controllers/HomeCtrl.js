@@ -16,7 +16,7 @@ function ($scope, $window, $log, $state, $rootScope, $parse, $interval, SETTINGS
 		  }
 		  if (filterService) {
 		    //options.filters.push({services: [filterService]});
-		    options.filters.push({services: ['10002','8479','fda50693-a4e2-4fb1-afcf-c6eb07647825']});
+		    options.filters.push({services: [parseInt('0x10002', 16), parseInt('0x8479', 16),'fda50693-a4e2-4fb1-afcf-c6eb07647825']});
 		  }
 		  /*
 		  let filterName = '';//document.getElementById('name').value;
